@@ -23,7 +23,7 @@ def comprobar_comando(comando: str) -> bool:
 
 
 def mostrar_mensaje_error():
-    return print("****Error****")
+    return print("*ERROR* Entrada inválida")
 
 
 
@@ -180,9 +180,9 @@ def main():
     print("*Reset*")
     print("*Fin*")
     while not encuentra_fin:
-
+        
         comando, importe = recuperar_comando_e_importe(linea)
-
+        
         if comando is None or not comprobar_comando(comando):
             mostrar_mensaje_error()
         elif comando in ("saldo", "reset", "fin") and importe is not None:
@@ -196,13 +196,13 @@ def main():
         elif importe is None or not comprobar_importe(importe):
             mostrar_mensaje_error()
         else:
-
+            
             if comando == "compra":
                 procesar_compra(saldo)
             elif comando == "venta":
                 procesar_venta(saldo)
 
 
-            
+
 if __name__ == "__main__":
     main()
