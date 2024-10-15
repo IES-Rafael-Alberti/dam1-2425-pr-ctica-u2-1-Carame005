@@ -192,7 +192,7 @@ def main():
         elif comando == "reset":
             resetear_saldo(saldo,cont_compras,cont_ventas)
         elif comando == "fin":
-            break
+            encuentra_fin()
         elif importe is None or not comprobar_importe(importe):
             mostrar_mensaje_error()
         else:
